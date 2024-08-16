@@ -29,10 +29,10 @@ const app = Vue.createApp({
                 
         },
         fetchWeather() {
-            fetch(`https://weather-data.liamstewart.ca/?city=${this.defaultCity}`)
+            fetch(`https://goweather.herokuapp.com/weather/${this.defaultCity}`)
                 .then(response => response.json())
                 .then(data => {
-                    this.weather = data;
+                    this.weather = data;    
                 })
                 
         },
