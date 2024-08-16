@@ -26,19 +26,15 @@ const app = Vue.createApp({
                 .then(data => {
                     this.randomFact = data.text;
                 })
-                .catch(error => {
-                    console.error('Error: ', error);
-                });
+                
         },
         fetchWeather() {
-            fetch(`https://goweather.herokuapp.com/weather/${this.defaultCity}`)
+            fetch(`https://weather-data.liamstewart.ca/?city=${this.defaultCity}`)
                 .then(response => response.json())
                 .then(data => {
                     this.weather = data;
                 })
-                .catch(error => {
-                    console.error('Error: ', error);
-                });
+                
         },
         fetchDictionaryDefinition() {
             fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${this.dictionaryWord}`)
@@ -46,9 +42,7 @@ const app = Vue.createApp({
                 .then(data => {
                     this.dictionaryDefinition = data[0];
                 })
-                .catch(error => {
-                    console.error('Error: ', error);
-                });
+                
         }
     }
 });
